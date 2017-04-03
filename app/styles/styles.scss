@@ -1,0 +1,359 @@
+@import "../../sass/font-awesome/font-awesome";
+@import "../../sass/bootstrap";
+@function rem-calc($values, $base-value: 22px) {
+  $max: length($values);
+  $remValues: ();
+  @if $max==1 {
+    @return convert-to-rem(nth($values, 1), $base-value);
+  }
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+  }
+  @return $remValues;
+}
+@function convert-to-rem($value, $base-value: 10px) {
+  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+  @if ($value==0rem) {
+    $value: 0;
+  } // Turn 0rem into 0
+  @return $value;
+}
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+$footerHeight: 73px;
+$retina-media-query: "only screen and (-webkit-min-device-pixel-ratio: 2)," + "only screen and (min--moz-device-pixel-ratio: 2)," + "only screen and (-o-min-device-pixel-ratio: 2/1)," + "only screen and (min-device-pixel-ratio: 2)," + "only screen and (min-resolution: 192dpi)," + "only screen and (min-resolution: 2dppx)";
+
+/* Sticky footer styles
+
+/* Custom page CSS
+-------------------------------------------------- */
+
+ul {
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #f3f3f5;
+}
+.serial-block {
+  li {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    a {
+      max-width: 100%;
+      img {
+        max-width: 100%;
+      }
+    }
+    h5 {
+      margin-top: 5px;
+      text-align: left;
+    }
+  }
+}
+
+/* Not required for template or sticky footer method. */
+
+.container .text-muted {
+  margin: 20px 0;
+}
+code {
+  font-size: 80%;
+}
+.card {
+  border-bottom: 1px solid #312f32;
+  padding-bottom: 30px;
+  .poster {
+    img {
+      max-width: 100%;
+    }
+  }
+  .series-info {
+    h2 {
+      margin: 10px 0 15px;
+    }
+    p {
+      color: #f3f3f5;
+      line-height: 18px;
+    }
+  }
+}
+.info-wrapper {
+  display: flex;
+  h4 {
+    margin-bottom: 15px;
+  }
+  padding-top: 30px;
+  & > div {
+    max-height: 250px;
+    overflow: scroll;
+    li {
+      &:nth-child(odd) {
+        background-color: #1f2025;
+      }
+      span {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: inline-block;
+        padding-left: 5px;
+      }
+      .episode-number {
+        display: inline-block;
+        padding-left: 7px;
+        padding-right: 7px;
+        border-right: 1px solid #191919;
+      }
+    }
+  }
+  .episodes,
+  .seasons {
+    li {
+      position: relative;
+      &.selected {
+        &:after {
+          width: 0;
+          height: 0;
+          display: block;
+          content: "";
+          position: absolute;
+          top: 0;
+          right: -5px;
+          border-top: 13px solid transparent;
+          border-bottom: 13px solid transparent;
+          border-left: 5px solid #1d2e4c;
+        }
+        background-color: #1d2e4c;
+        a {
+
+          color: #fff;
+        }
+      }
+      a {
+        display: block;
+        color: #707477;
+      }
+    }
+  }
+}
+
+/**/
+body,html {
+  height: 100%;
+}
+body {
+  background-color: $base-black;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+/* RESET */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote {
+  &:before,
+  &:after {
+    content: '';
+    content: none;
+  }
+}
+q {
+  &:before,
+  &:after {
+    content: '';
+    content: none;
+  }
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a:hover {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+Media Queries
+========================================================================== */
+
+
+/* Retina */
+
+@media #{$retina-media-query} {}
+
+/* 480px and bigger */
+
+@media (min-width: $screen-xs-min) {}
+
+/* 480px and smaller */
+
+@media (max-width: $screen-xs) {}
+
+/* 768px and smaller */
+
+@media (max-width: $screen-xs-max) {
+  .info-wrapper {
+    display: block;
+    & > div {
+      padding-bottom: 10px;
+      padding-top: 10px;
+      border-bottom: 1px solid #312f32;
+    }
+  }
+  .card {
+    &>div {
+      text-align: center;
+    }
+  }
+}
+
+/* 768px and bigger */
+
+@media (min-width: $screen-sm-min) {}
+
+/* 480px to 767px */
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {}
+
+/* 768px to 991px */
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {}
+
+/* 992px and smaller */
+
+@media (max-width: $screen-sm-max) {}
+
+/* 992px and bigger */
+
+@media (min-width: $screen-md-min) {}
+
+/* 992px to 1199px */
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {}
+
+/* 1200px and bigger */
+
+@media (min-width: $screen-lg-min) {}
+@media (min-width: 1500px) {}
