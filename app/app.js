@@ -1,5 +1,5 @@
-'use strict';
-
+'use strict'
+import angular from 'angular';
 /**
  * @ngdoc overview
  * @name filmsApp
@@ -8,8 +8,7 @@
  *
  * Main module of the application.
  */
-var filmApp = angular
-  .module('filmsApp', [
+var filmApp = angular.module('filmsApp', [
     'ngCookies',
     'ngSanitize',
     'ngRoute',
@@ -19,3 +18,6 @@ var filmApp = angular
   .constant("api", {
   "url": "http://api.themoviedb.org/"
 });
+// require('./directives');
+// require('./services');
+// require('./controllers');
