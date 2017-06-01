@@ -1,11 +1,14 @@
 var path = require('path'),
     webpack = require("webpack");
 
-
+console.log(__dirname);
 var config = {
-    entry: './app/app.js',
+    entry: {
+        app: __dirname + '/app/app.js',
+        vendor: ['angular', 'angular-cookies', 'angular-route', 'angular-sanitize', 'angular-ui-router']
+    },
     output: {
-        path: __dirname + '/js',
+        path: __dirname + '/app/js',
         filename: 'app.bundle.js',
     },
     module: {
@@ -21,11 +24,14 @@ var config = {
             }
         }]
     },
-    plugins: [],
-    devServer: {
-        inline: true,
-        port: 10000
-    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({name:"vendor",filename: "vendor.bundle.js"})
+    ]
 
 };
 module.exports = config;
+// ,
+//     devServer: {
+//         inline: true,
+//         port: 10000
+//     },
