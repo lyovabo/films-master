@@ -1,27 +1,4 @@
-// (function (filmApp) {
-//   var MainCtrl = ['$scope', 'FilmsListService', function ($scope, FilmsListService) {
-//     function init() {
-//       $scope.page = 1;
-//       loadSeriesList()
-//     }
 
-//     function loadSeriesList() {
-//       $scope.loading = true;
-
-
-//       FilmsListService.getSerialList($scope.page).then(function (data) {
-//         $scope.loading = false;
-//         $scope.serialsList = data.data;
-//       });
-//     }
-
-//     init();
-//   }];
-
-//   filmApp.controller('MainCtrl', MainCtrl);
-
-// })(filmApp);
-MainController.$inject = ['$scope','FilmsListService'];
 export default class MainController {
   constructor($scope,FilmsListService) {
     this.$scope = $scope;
@@ -33,10 +10,12 @@ export default class MainController {
     this.loadSeriesList()
   }
   loadSeriesList(){
-    this.$scope.loading = true;
-    this.FilmsListService.getSerialList($scope.page).then(function (data) {
-      $scope.loading = false;
-      $scope.serialsList = data.data;
+    var self = this;
+    self.$scope.loading = true;
+    self.FilmsListService.getSerialList(this.$scope.page).then(function (data) {
+      self.$scope.loading = false;
+      self.$scope.serialsList = data.data;
     });
   }
 }
+MainController.$inject = ['$scope','FilmListService'];

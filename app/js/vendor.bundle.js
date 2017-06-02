@@ -150,7 +150,7 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 96);
+/******/ 	return __webpack_require__(__webpack_require__.s = 100);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1170,11 +1170,11 @@ __export(__webpack_require__(72));
  */ /** */
 Object.defineProperty(exports, "__esModule", { value: true });
 var predicates_1 = __webpack_require__(1);
-var rejectFactory_1 = __webpack_require__(13);
+var rejectFactory_1 = __webpack_require__(12);
 var common_1 = __webpack_require__(0);
 var hof_1 = __webpack_require__(2);
 var transition_1 = __webpack_require__(20);
-var resolvable_1 = __webpack_require__(12);
+var resolvable_1 = __webpack_require__(11);
 /**
  * Returns a string shortened to a maximum length
  *
@@ -1915,21 +1915,13 @@ var TransitionHookScope;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ng_from_import = __webpack_require__(11);
+var ng_from_import = __webpack_require__(15);
 var ng_from_global = angular;
 exports.ng = (ng_from_import && ng_from_import.module) ? ng_from_import : ng_from_global;
 //# sourceMappingURL=angular.js.map
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(94);
-module.exports = angular;
-
-
-/***/ }),
-/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2068,7 +2060,7 @@ exports.Resolvable = Resolvable;
 //# sourceMappingURL=resolvable.js.map
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2163,7 +2155,7 @@ exports.Rejection = Rejection;
 //# sourceMappingURL=rejectFactory.js.map
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2181,7 +2173,7 @@ var predicates_1 = __webpack_require__(1);
 var hof_1 = __webpack_require__(2);
 var trace_1 = __webpack_require__(6);
 var coreservices_1 = __webpack_require__(3);
-var rejectFactory_1 = __webpack_require__(13);
+var rejectFactory_1 = __webpack_require__(12);
 var targetState_1 = __webpack_require__(7);
 var defaultOptions = {
     current: common_1.noop,
@@ -2389,7 +2381,7 @@ exports.TransitionHook = TransitionHook;
 //# sourceMappingURL=transitionHook.js.map
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2461,6 +2453,14 @@ function locationPluginFactory(name, isHtml5, serviceClass, configurationClass) 
 }
 exports.locationPluginFactory = locationPluginFactory;
 //# sourceMappingURL=utils.js.map
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(94);
+module.exports = angular;
+
 
 /***/ }),
 /* 16 */
@@ -2765,7 +2765,7 @@ var hof_1 = __webpack_require__(2);
 var trace_1 = __webpack_require__(6);
 var coreservices_1 = __webpack_require__(3);
 var interface_1 = __webpack_require__(35);
-var resolvable_1 = __webpack_require__(12);
+var resolvable_1 = __webpack_require__(11);
 var pathFactory_1 = __webpack_require__(18);
 var strings_1 = __webpack_require__(5);
 var when = interface_1.resolvePolicies.when;
@@ -2975,13 +2975,13 @@ var common_1 = __webpack_require__(0);
 var predicates_1 = __webpack_require__(1);
 var hof_1 = __webpack_require__(2);
 var interface_1 = __webpack_require__(9); // has or is using
-var transitionHook_1 = __webpack_require__(14);
+var transitionHook_1 = __webpack_require__(13);
 var hookRegistry_1 = __webpack_require__(27);
 var hookBuilder_1 = __webpack_require__(42);
 var pathFactory_1 = __webpack_require__(18);
 var targetState_1 = __webpack_require__(7);
 var param_1 = __webpack_require__(8);
-var resolvable_1 = __webpack_require__(12);
+var resolvable_1 = __webpack_require__(11);
 var resolveContext_1 = __webpack_require__(19);
 /** @hidden */
 var stateSelf = hof_1.prop("self");
@@ -4110,7 +4110,7 @@ exports.UrlMatcher = UrlMatcher;
  * @module vanilla
  */ /** */
 Object.defineProperty(exports, "__esModule", { value: true });
-var utils_1 = __webpack_require__(15);
+var utils_1 = __webpack_require__(14);
 var predicates_1 = __webpack_require__(1);
 var common_1 = __webpack_require__(0);
 /** A base `LocationServices` */
@@ -4739,7 +4739,7 @@ var updateGlobals_1 = __webpack_require__(69);
 var url_1 = __webpack_require__(70);
 var lazyLoad_1 = __webpack_require__(32);
 var transitionEventType_1 = __webpack_require__(43);
-var transitionHook_1 = __webpack_require__(14);
+var transitionHook_1 = __webpack_require__(13);
 var predicates_1 = __webpack_require__(1);
 var common_1 = __webpack_require__(0);
 var hof_1 = __webpack_require__(2);
@@ -5779,7 +5779,7 @@ var common_1 = __webpack_require__(0);
 var predicates_1 = __webpack_require__(1);
 var strings_1 = __webpack_require__(5);
 var hof_1 = __webpack_require__(2);
-var resolvable_1 = __webpack_require__(12);
+var resolvable_1 = __webpack_require__(11);
 var coreservices_1 = __webpack_require__(3);
 var parseUrl = function (url) {
     if (!predicates_1.isString(url))
@@ -6396,7 +6396,7 @@ var coreservices_1 = __webpack_require__(3);
 var pathFactory_1 = __webpack_require__(18);
 var pathNode_1 = __webpack_require__(25);
 var transitionService_1 = __webpack_require__(28);
-var rejectFactory_1 = __webpack_require__(13);
+var rejectFactory_1 = __webpack_require__(12);
 var targetState_1 = __webpack_require__(7);
 var param_1 = __webpack_require__(8);
 var glob_1 = __webpack_require__(16);
@@ -6970,7 +6970,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var common_1 = __webpack_require__(0);
 var predicates_1 = __webpack_require__(1);
 var interface_1 = __webpack_require__(9);
-var transitionHook_1 = __webpack_require__(14);
+var transitionHook_1 = __webpack_require__(13);
 /**
  * This class returns applicable TransitionHooks for a specific Transition instance.
  *
@@ -7088,7 +7088,7 @@ function tupleSort(reverseDepthSort) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var transitionHook_1 = __webpack_require__(14);
+var transitionHook_1 = __webpack_require__(13);
 /**
  * This class defines a type of hook, such as `onBefore` or `onEnter`.
  * Plugins can define custom hook types, such as sticky states does for `onInactive`.
@@ -7903,7 +7903,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @module vanilla
  */
 /** */
-var utils_1 = __webpack_require__(15);
+var utils_1 = __webpack_require__(14);
 var baseLocationService_1 = __webpack_require__(22);
 /** A `LocationServices` that uses the browser hash "#" to get/set the current location */
 var HashLocationService = (function (_super) {
@@ -8122,7 +8122,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var utils_1 = __webpack_require__(15);
+var utils_1 = __webpack_require__(14);
 var baseLocationService_1 = __webpack_require__(22);
 /**
  * A `LocationServices` that gets/sets the current location using the browser's `location` and `history` apis
@@ -8958,7 +8958,7 @@ exports.registerAddCoreResolvables = function (transitionService) {
 /** @module hooks */ /** */
 Object.defineProperty(exports, "__esModule", { value: true });
 var trace_1 = __webpack_require__(6);
-var rejectFactory_1 = __webpack_require__(13);
+var rejectFactory_1 = __webpack_require__(12);
 /**
  * A [[TransitionHookFn]] that skips a transition if it should be ignored
  *
@@ -9361,7 +9361,7 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module resolve */ /** for typedoc */
 __export(__webpack_require__(35));
-__export(__webpack_require__(12));
+__export(__webpack_require__(11));
 __export(__webpack_require__(19));
 //# sourceMappingURL=index.js.map
 
@@ -9411,9 +9411,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(9));
 __export(__webpack_require__(42));
 __export(__webpack_require__(27));
-__export(__webpack_require__(13));
+__export(__webpack_require__(12));
 __export(__webpack_require__(20));
-__export(__webpack_require__(14));
+__export(__webpack_require__(13));
 __export(__webpack_require__(43));
 __export(__webpack_require__(28));
 //# sourceMappingURL=index.js.map
@@ -9471,7 +9471,7 @@ __export(__webpack_require__(52));
 __export(__webpack_require__(53));
 __export(__webpack_require__(51));
 __export(__webpack_require__(48));
-__export(__webpack_require__(15));
+__export(__webpack_require__(14));
 __export(__webpack_require__(81));
 //# sourceMappingURL=index.js.map
 
@@ -9489,7 +9489,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /** */
 var browserLocationConfig_1 = __webpack_require__(48);
 var hashLocationService_1 = __webpack_require__(49);
-var utils_1 = __webpack_require__(15);
+var utils_1 = __webpack_require__(14);
 var pushStateLocationService_1 = __webpack_require__(53);
 var memoryLocationService_1 = __webpack_require__(52);
 var memoryLocationConfig_1 = __webpack_require__(51);
@@ -12446,7 +12446,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @module directives
  */ /** for typedoc */
 var angular_1 = __webpack_require__(10);
-var angular_2 = __webpack_require__(11);
+var angular_2 = __webpack_require__(15);
 var core_1 = __webpack_require__(4);
 var views_1 = __webpack_require__(30);
 var services_1 = __webpack_require__(29);
@@ -46876,10 +46876,14 @@ $provide.value("$locale", {
 
 /***/ }),
 /* 95 */,
-/* 96 */
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(11);
+__webpack_require__(15);
 __webpack_require__(58);
 __webpack_require__(59);
 __webpack_require__(60);

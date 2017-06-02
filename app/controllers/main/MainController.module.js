@@ -1,4 +1,5 @@
 import MainController from './MainController';
 let mainController = angular.module('filmsApp.controllers',[]);
-mainController.service('MainController',MainController);
-export default mainController = maincontroller.name;
+mainController.controller('MainController',MainController);
+mainController = mainController.name;
+export default mainController;

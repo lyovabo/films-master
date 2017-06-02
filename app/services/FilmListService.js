@@ -127,5 +127,5 @@
 
    
 }
-// FilmListService.$import = ['$http', 'api'];
+FilmListService.$import = ['$http', 'api'];
 export default FilmListService;

@@ -1,10 +1,11 @@
-var path = require('path'),
-    webpack = require("webpack");
+const path = require('path'),
+    	webpack = require("webpack");
+    	// ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 console.log(__dirname);
 var config = {
     entry: {
-        app: __dirname + '/app/app.js',
+        app: [__dirname + '/app/app.js'],
         vendor: ['angular', 'angular-cookies', 'angular-route', 'angular-sanitize', 'angular-ui-router']
     },
     output: {

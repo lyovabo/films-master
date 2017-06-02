@@ -24,6 +24,7 @@
       <ul>
         <li ng-repeat="episode in seasonData.episodes track by $index" ng-class="getSelectedEpisode(episode)">
           <a ui-sref="serial({id: stateParams.id, sid: stateParams.sid, eid: episode.episode_number})"><span class="episode-number">{{$index}}</span> <span class="episode-name">{{episode.name}}</span></a>
+         
         </li>
       </ul>
     </div>
