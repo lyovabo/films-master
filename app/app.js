@@ -12,6 +12,7 @@ require('./styles/styles.scss');
 import filmListService from './services/FilmListService.module';
 import MainController from './controllers/main/MainController';
 import SerialController from './controllers/serial/SerialController';
+import Some from './controllers/main/SomeFilter';
 // console.log(mainController)
 export const filmsApp = angular.module('filmsApp', [
     'ngCookies',
@@ -48,3 +49,4 @@ export const filmsApp = angular.module('filmsApp', [
   ]);
 filmsApp.controller('SerialController',SerialController);
 filmsApp.controller('MainController',MainController);
+filmsApp.filter('Some',() => Some);

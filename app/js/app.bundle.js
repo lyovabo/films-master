@@ -1,6 +1,13 @@
 webpackJsonp([0],{
 
 /***/ 100:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 101:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(58);
@@ -15,12 +22,13 @@ module.exports = __webpack_require__(58);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_FilmListService_module__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_FilmListService_module__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__controllers_main_MainController__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__controllers_serial_SerialController__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__controllers_serial_SerialController__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__controllers_main_SomeFilter__ = __webpack_require__(64);
 
 
-__webpack_require__(99);
+__webpack_require__(100);
 /**
  * @ngdoc overview
  * @name filmsApp
@@ -29,6 +37,7 @@ __webpack_require__(99);
  *
  * Main module of the application.
  */
+
 
 
 
@@ -70,7 +79,7 @@ const filmsApp = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('filmsAp
   ]);
 filmsApp.controller('SerialController',__WEBPACK_IMPORTED_MODULE_3__controllers_serial_SerialController__["a" /* default */]);
 filmsApp.controller('MainController',__WEBPACK_IMPORTED_MODULE_2__controllers_main_MainController__["a" /* default */]);
-
+filmsApp.filter('Some',() => __WEBPACK_IMPORTED_MODULE_4__controllers_main_SomeFilter__["a" /* default */]);
 
 /***/ }),
 
@@ -83,19 +92,31 @@ class MainController {
   constructor($scope,FilmsListService) {
     this.$scope = $scope;
     this.FilmsListService = FilmsListService;
+    this.$scope.reverse = false;
     this.init();
   }
   init() {
     this.$scope.page = 1;
     this.loadSeriesList()
+    this.$scope.orderByName = (objects,obj2) => {
+      // console.log('making reverse',this.$scope.reverse);
+      // this.$scope.reverse = (this.$scope.reverse)?false:true;
+      console.log(objects);
+      return objects;
+    }
   }
   loadSeriesList(){
     var self = this;
     self.$scope.loading = true;
-    self.FilmsListService.getSerialList(this.$scope.page).then(function (data) {
-      self.$scope.loading = false;
-      self.$scope.serialsList = data.data;
+    self.FilmsListService.getSerialList(this.$scope.page).then( (data) => {
+      this.$scope.loading = false;
+      this.$scope.serialsList = data.data;
+      console.log(data.data)
     });
+  }
+  makeReverse() {
+    console.log(this)
+    
   }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = MainController;
@@ -106,6 +127,20 @@ MainController.$inject = ['$scope','FilmListService'];
 /***/ }),
 
 /***/ 64:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class Some {
+	static logInput(input){
+		console.log(input)
+		return input;
+	}
+}
+/* harmony default export */ __webpack_exports__["a"] = (Some.logInput);
+
+/***/ }),
+
+/***/ 65:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -161,7 +196,7 @@ SerialController.$inject = ['$scope', '$stateParams', 'FilmListService'];
 
 /***/ }),
 
-/***/ 65:
+/***/ 66:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -299,11 +334,11 @@ FilmListService.$import = ['$http', 'api'];
 
 /***/ }),
 
-/***/ 66:
+/***/ 67:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FilmListService__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FilmListService__ = __webpack_require__(66);
 
 
 let filmListService = angular.module('filmsApp.services',[]);
@@ -312,13 +347,6 @@ filmListService.service('FilmListService', __WEBPACK_IMPORTED_MODULE_0__FilmList
 filmListService = filmListService.name
 /* harmony default export */ __webpack_exports__["a"] = (filmListService);
 
-/***/ }),
-
-/***/ 99:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
 /***/ })
 
-},[100]);
+},[101]);
