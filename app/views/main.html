@@ -2,17 +2,18 @@
   <div ng-show="loading"> Loading ...</div>
   <div class="serial-block" ng-if="serialsList">
     <header class="row">
-      <button class="col-sm-3" ng-click="makeReverse()">
-        Reverse
-      </button>
+     
     </header>
     <ul class="row">
-      <li class="col-sm-4 col-md-2 col-xs-6 text-center" ng-repeat="item in serialsList.results | Some">
+      <li class="col-sm-4 col-md-2 col-xs-6 text-center" ng-repeat="item in serialsList | Some">
         <a ui-sref="serial({id: item.id, sid: 1, eid: 1})">
           <img ng-src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{item.poster_path}}">
           <h5>{{item.name}}</h5>
         </a>
       </li>
     </ul>
+     <button class="col-sm-4 col-sm-offset-4" ng-click="LoadMore()">
+        Load More
+      </button>
   </div>
 

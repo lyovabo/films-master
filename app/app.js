@@ -10,16 +10,17 @@ require('./styles/styles.scss');
  * Main module of the application.
  */
 import filmListService from './services/FilmListService.module';
-import MainController from './controllers/main/MainController';
-import SerialController from './controllers/serial/SerialController';
+import controllers from './controllers/main/MainController.module';
+import serialController from './controllers/serial/SerialController.module';
 import Some from './controllers/main/SomeFilter';
-// console.log(mainController)
+
 export const filmsApp = angular.module('filmsApp', [
     'ngCookies',
     'ngSanitize',
     'ngRoute',
     'ui.router',
-    filmListService
+    filmListService,
+    controllers
   ])
   .constant("api", {
   "url": "http://api.themoviedb.org/"
@@ -47,6 +48,7 @@ export const filmsApp = angular.module('filmsApp', [
 
     }
   ]);
-filmsApp.controller('SerialController',SerialController);
-filmsApp.controller('MainController',MainController);
+
+// filmsApp.controller('SerialController',SerialController);
+// filmsApp.controller('MainController',MainController);
 filmsApp.filter('Some',() => Some);

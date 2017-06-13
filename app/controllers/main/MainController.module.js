@@ -1,5 +1,11 @@
+// import MainController from './MainController';
+// import SerialController from '../serial/SerialController';
+// let controllers = angular.module('filmsApp.controllers',[]);
+// controllers.controller('MainController',MainController);
+// controllers.controller('SerialController',SerialController);
+// controllers = controllers.name;
+// export default controllers;
 import MainController from './MainController';
-let mainController = angular.module('filmsApp.controllers',[]);
-mainController.controller('MainController',MainController);
-mainController = mainController.name;
-export default mainController;
+let mainControllerModule = angular.module('filmsApp.controllers',[]);
+mainControllerModule.controller('MainController',MainController);
+export default  mainControllerModule.name;

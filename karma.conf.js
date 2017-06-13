@@ -35,8 +35,16 @@ module.exports = function(config) {
         },
 
         plugins: [
-            require("karma-webpack")
+            
+            "webpack",
+            "karma-webpack",
+            'karma-jasmine',
+            'karma-phantomjs-launcher'
         ],
+         junitReporter: {
+            outputFile: 'test-results-karma.xml',
+            suite: ''
+        },
         browsers: ['PhantomJS'],
 
     });
