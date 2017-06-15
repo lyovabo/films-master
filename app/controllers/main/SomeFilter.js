@@ -5,6 +5,7 @@ class Some {
     	if(a.name > b.name) return 1;
     	return 0;
 		})
+		console.log(input);
 		return input;
 	}
 

@@ -16,7 +16,9 @@ module.exports = function(config) {
         basePath: './',
         files: [
             // all files ending in "_test"
-            // 'app/js/vendor.bundle.js',
+
+            'app/js/vendor.bundle.js',
+            'node_modules/angular-mocks/angular-mocks.js',
             'app/js/app.bundle.js',
             'test/*_test.js',
             'test/**/*_test.js'
@@ -48,8 +50,20 @@ module.exports = function(config) {
             webpack,
             'karma-jasmine',
             'karma-phantomjs-launcher',
+            'karma-htmlfile-reporter'
            
         ],
+         htmlReporter: {
+            outputFile: 'test/logs/units.html',
+                    
+              // Optional 
+              pageTitle: 'Unit Tests',
+              subPageTitle: 'A sample project description',
+              groupSuites: true,
+              useCompactStyle: true,
+              useLegacyStyle: true
+            },
+            "reporters": ["progress","html"],
         //  junitReporter: {
         //     outputFile: 'test-results-karma.xml',
         //     suite: ''

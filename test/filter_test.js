@@ -1,17 +1,13 @@
 describe('Filter: Some', function() {
-  var filmsApp =  angular.module('filmsApp');
   var filter;
-   // beforeEach(angular.module('filmsApp'));
+   beforeEach(angular.mock.module('filmsApp'))
    beforeEach(inject(function(_$filter_){
-    filter = $filter;
+    filter = _$filter_;
   }));
-  it('should filter the parameters passed', function(){
-    expect(filmsApp.name).toBe('filmsApp');
-  })
   it('some tests', function(){
-  
-    return filter.name == 'Some';
-
+  	var ar = [{'name':'b'},{'name':'z'},{'name':'a'}];
+  	var zar = [{'name':'a'},{'name':'b'},{'name':'zs'}];
+  	expect(JSON.stringify(filter('Some')(ar))).toBe(JSON.stringify(zar));
   })
 });
 

@@ -9,7 +9,7 @@ const path = require('path'),
 var config = {
         entry: {
             app: [__dirname + '/app/app.js'],
-            // vendor: ['angular', 'angular-cookies', 'angular-route', 'angular-sanitize', 'angular-ui-router','angular-mock'],
+            vendor: ['angular', 'angular-cookies', 'angular-route', 'angular-sanitize', 'angular-ui-router'],
 
         },
         output: {
@@ -59,8 +59,8 @@ var config = {
         },
     
     plugins: [
-        // new webpack.optimize.CommonsChunkPlugin({ name: "vendor", filename: "vendor.bundle.js" }),
-        // new webpack.optimize.CommonsChunkPlugin({ name: "vendor", chunks: "app.bundle.js" }),
+        new webpack.optimize.CommonsChunkPlugin({ name: "vendor", filename: "vendor.bundle.js" }),
+ 
          // new ExtractTextPlugin("styles.css"),  
     ],
 
