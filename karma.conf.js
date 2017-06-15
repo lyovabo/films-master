@@ -1,9 +1,23 @@
+var webpack = require('karma-webpack');
+var webpackConfig = require('./webpack.config');
+// webpackConfig.module.loaders = [
+//   {
+//     test: /\.js$/,
+//     exclude: /node_modules/,
+//     loader: 'babel-loader'
+//   }
+// ];
+
+
 module.exports = function(config) {
     config.set({
         // ... normal karma configuration
-
+        frameworks: [ 'jasmine' ],
+        basePath: './',
         files: [
             // all files ending in "_test"
+            // 'app/js/vendor.bundle.js',
+            'app/js/app.bundle.js',
             'test/*_test.js',
             'test/**/*_test.js'
             // each file acts as entry point for the webpack configuration
@@ -11,40 +25,36 @@ module.exports = function(config) {
 
         preprocessors: {
             // add webpack as preprocessor
+            // 'app/js/app.bundle.js':['webpack'],
+            // 'app/js/vendor.bundle.js':['webpack'],
             'test/*_test.js': ['webpack'],
-            'test/**/*_test.js': ['webpack']
+            'test/**/*_test.js': ['webpack'],
         },
 
-        webpack: {
-            // you don't need to specify the entry option because
-            // karma watches the test entry points
-            // webpack watches dependencies
-
-            // ... remainder of webpack configuration (or import)
-        },
+        webpack: webpackConfig,
 
         webpackMiddleware: {
             // webpack-dev-middleware configuration
             // i.e.
             noInfo: true,
             // and use stats to turn off verbose output
-            stats: {
-                // options i.e. 
-                chunks: false
-            }
+            // stats: {
+            //     // options i.e. 
+            //     chunks: false
+            // }
         },
 
-        plugins: [
-            
-            "webpack",
-            "karma-webpack",
+        plugins: [ 
+            webpack,
             'karma-jasmine',
-            'karma-phantomjs-launcher'
+            'karma-phantomjs-launcher',
+           
         ],
-         junitReporter: {
-            outputFile: 'test-results-karma.xml',
-            suite: ''
-        },
+        //  junitReporter: {
+        //     outputFile: 'test-results-karma.xml',
+        //     suite: ''
+        // },
+
         browsers: ['PhantomJS'],
 
     });

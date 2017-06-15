@@ -1,6 +1,6 @@
 'use strict'
 import angular from 'angular';
-require('./styles/styles.scss');
+// require('./styles/styles.scss');
 /**
  * @ngdoc overview
  * @name filmsApp

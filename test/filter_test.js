@@ -1,10 +1,17 @@
 describe('Filter: Some', function() {
-  var someFilter;
-  
-  beforeEach(module('filmsApp'));
-  beforeEach(inject(function(_Some_) {
-    someFilter = _Some_;
+  var filmsApp =  angular.module('filmsApp');
+  var filter;
+   // beforeEach(angular.module('filmsApp'));
+   beforeEach(inject(function(_$filter_){
+    filter = $filter;
   }));
-  it('should be able to BLA BLA', function() {
-    expect(someFilter(['b','a','c'])).toBe(['a','b','c']);
+  it('should filter the parameters passed', function(){
+    expect(filmsApp.name).toBe('filmsApp');
+  })
+  it('some tests', function(){
+  
+    return filter.name == 'Some';
+
+  })
 });
+
